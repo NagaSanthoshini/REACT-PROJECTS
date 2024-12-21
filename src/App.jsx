@@ -6,21 +6,20 @@ function App() {
   const [task, setTask] = useState("");
   const [todos, setTodos] = useState([]);
 
-  // Handle input change
+
   const changeHandler = (e) => {
     setTask(e.target.value);
   };
 
-  // Handle form submission
+
   const submitHandler = (e) => {
     e.preventDefault();
     if (task.trim() !== "") {
       setTodos([...todos, task]);
-      setTask(""); // Clear input field
+      setTask(""); 
     }
   };
 
-  // Handle task deletion
   const deleteTodo = (index) => {
     setTodos(todos.filter((_, i) => i !== index));
   };
